@@ -5,7 +5,7 @@ import styles from "./../style.module.css";
 
 const MessageHistory = ({ messages }) => (
   <div className={styles["chat"]}>
-    {messages.map(msg => (<Message key={msg.id} {...msg} />))}
+    {messages.map((msg, idx) => (<Message key={idx} {...msg} />))}
   </div>
 );
 
@@ -13,7 +13,7 @@ MessageHistory.propTypes = {
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      isMe: PropTypes.bool,
+      isArtist: PropTypes.bool,
       text: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,

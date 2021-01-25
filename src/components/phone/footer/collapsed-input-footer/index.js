@@ -4,11 +4,11 @@ import styles from './style.module.css'
 // import HomeBar from "../home-bar";
 import SpotifyBar from "../spotify-bar"
 
-const CollapsedInputFooter = () => (
+const CollapsedInputFooter = ({spotifyURI}) => (
   <div className={styles['input-view']}>
     {/* <InputBar/> */}
     {/* <HomeBar/> */}
-    <SpotifyBar/>
+    <SpotifyBar spotifyURI={spotifyURI}/>
   </div>
 );
 

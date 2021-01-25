@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './../style.module.css'
 
-const Message = ({ isMe, text }) => {
-  let className = (isMe ? "mine": "yours");
+const Message = ({ isArtist, text }) => {
+  let className = (isArtist ? "yours" : "mine");
 
   return (
     <div className={[styles[className], styles["messages"], "animated", "slideInUp", "fast"].join(' ')}>

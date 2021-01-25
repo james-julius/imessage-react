@@ -23,7 +23,7 @@ p {
     min-width: 265px;
     display: flex;
     padding: 0 20px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     position: absolute;
     height: 455px;
     z-index: -5;

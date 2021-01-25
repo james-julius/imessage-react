@@ -5,7 +5,7 @@ import {TiLocationArrow} from "react-icons/ti";
 import Clock from "./clock";
 import ContactDetail from "./contact-detail";
 
-const Header = () => (
+const Header = ({name, initials}) => (
   <div className={styles['header']}>
     <div className={styles['icons']}>
       <span className={styles['left-icons']}>
@@ -24,7 +24,7 @@ const Header = () => (
       <span className={styles['back-arrow']}>
         <IoIosArrowBack/>
       </span>
-      <ContactDetail/>
+      <ContactDetail name={name} initials={initials}/>
     </div>
   </div>
 );
