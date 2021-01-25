@@ -2,12 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Message from "../message";
 import styles from "./../style.module.css";
-import connect from "react-redux/es/connect/connect";
-import TypingBubble from "../typing-bubble";
 
-const MessageHistory = ({ messages, isTyping }) => (
+const MessageHistory = ({ messages }) => (
   <div className={styles["chat"]}>
-    {isTyping ? <TypingBubble/> : ''}
     {messages.map(msg => (<Message key={msg.id} {...msg} />))}
   </div>
 );
@@ -23,15 +20,4 @@ MessageHistory.propTypes = {
   isTyping: PropTypes.bool
 };
 
-const determineIsTyping = (message) => {
-  return !message.isMe && message.text.length > 0;
-};
-
-const mapStateToProps = state => ({
-  messages: state.messages,
-  isTyping: determineIsTyping(state.message)
-});
-
-export default connect(
-  mapStateToProps
-)(MessageHistory)
+export default MessageHistory

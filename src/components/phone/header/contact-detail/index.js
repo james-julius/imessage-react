@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './../style.module.css'
 import {IoIosArrowForward} from "react-icons/io";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
 
 const ContactDetail = ({initials, name}) => (
   <span className={styles["user-detail"]}>
@@ -20,10 +19,4 @@ ContactDetail.propTypes = {
   name: PropTypes.string
 };
 
-const mapStateToProps = (state) => ({
-  ...state.contact
-});
-
-export default connect(
-  mapStateToProps
-)(ContactDetail);
+export default ContactDetail;
