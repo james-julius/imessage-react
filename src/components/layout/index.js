@@ -8,7 +8,7 @@ import SettingsFrame from "../controller/settings-frame";
 
 const AppLayout = ({leftFrame}) => (
   <div className={styles["container"]}>
-    <Header/>
+    {/* <Header/> */}
     <div className={styles["content"]}>
       <div className={styles["columns-container"]}>
         <div className={[styles["split"], styles["left"]].join(' ')}>

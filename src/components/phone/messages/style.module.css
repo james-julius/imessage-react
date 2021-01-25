@@ -1,7 +1,7 @@
 @use postcss-nested;
 
 p {
-    max-width: 255px;
+    max-width: 80%;
     word-wrap: break-word;
     margin-bottom: 12px;
     font-size: 13px;
@@ -51,7 +51,6 @@ p {
 }
 
 .yours .message {
-    margin-right: 25%;
     background-color: #eee;
     position: relative;
 }
@@ -85,7 +84,7 @@ p {
 
 .mine .message {
     color: white;
-    margin-left: 25%;
+    
     background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%) fixed;
     position: relative;
 }

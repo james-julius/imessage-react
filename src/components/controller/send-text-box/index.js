@@ -2,10 +2,10 @@ import React from 'react'
 import styles from './../style.module.css'
 import PropTypes from "prop-types";
 import IconButton from "../icon-button";
-import {IoIosArrowRoundForward} from "react-icons/io";
-import {addMessage} from "../../../actions/messages";
-import {connect} from "react-redux";
-import {setMessage} from "../../../actions/message";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { addMessage } from "../../../actions/messages";
+import { connect } from "react-redux";
+import { setMessage } from "../../../actions/message";
 
 const SendTextBox = ({title, isMe, text, addMessage, setMessage}) => {
   return (
