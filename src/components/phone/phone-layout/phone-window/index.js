@@ -8,7 +8,7 @@ const PhoneWindow = () => {
   // Get ready to assign this data
   window.addEventListener('message', function(event) {
     var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-    if (typeof event.data == 'object' && event.data.call=='sendValue') {
+    if (typeof event.data === 'object' && event.data.call === 'sendValue') {
         let data = event.data.value;
         setSpotifyURI(data.spotifyURI);
         setMessages(data.messages);
