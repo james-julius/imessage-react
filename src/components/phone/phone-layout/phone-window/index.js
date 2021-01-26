@@ -21,6 +21,7 @@ const PhoneWindow = () => {
   
   document.onload = function() {
     window.parent.postMessage('message', () => 'readyForProps')
+    setName(window.parent.artistName);
   }
 
   const [spotifyURI, setSpotifyURI] = useState('');
