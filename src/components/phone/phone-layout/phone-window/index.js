@@ -7,7 +7,7 @@ import MessageHistory from "../../messages/message-history";
 const PhoneWindow = () => {
   // Get ready to assign this data
   window.addEventListener('message', function(event) {
-    alert(event);
+    alert(event)
     // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
     if (typeof event.data === 'object' && event.data.call === 'sendValue') {
         let data = event.data.value;
@@ -25,7 +25,7 @@ const PhoneWindow = () => {
   const [spotifyURI, setSpotifyURI] = useState('');
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState('R R');
-x
+
   function initialiseName() {
     let splitName = name.split(' ');
     return splitName[0][0].toUpperCase() + splitName[1][0].toUpperCase();
