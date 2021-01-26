@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '../style.module.css'
 import Header from "../../header";
 import CollapsedInputFooter from "../../footer/collapsed-input-footer";
@@ -9,19 +9,26 @@ const PhoneWindow = () => {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState("R R");
   // Get ready to assign this data
-  window.addEventListener('message', function(event) {
-    console.log(window.parent.location.href);
-  if (event.origin !== window.parent.location.href) return;
-  setName('Event received')
-    alert(event)
-    // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-    if (typeof event.data === 'object' && event.data.call === 'sendValue') {
-        let data = event.data.value;
-        setSpotifyURI(data.spotifyURI);
-        setMessages(data.messages);
-        setName(data.name);
-    }
-}, false);
+  useEffect(() => {
+    window.addEventListener(
+      "message",
+      function (event) {
+        console.log(window.parent.location.href);
+        if (event.origin !== window.parent.location.href) return;
+        setName("Event received");
+        alert(event);
+        // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+        if (typeof event.data === "object" && event.data.call === "sendValue") {
+          let data = event.data.value;
+          setSpotifyURI(data.spotifyURI);
+          setMessages(data.messages);
+          setName(data.name);
+        }
+      },
+      false
+    );
+  }, [])
+  
 
   
   document.onload = function() {
