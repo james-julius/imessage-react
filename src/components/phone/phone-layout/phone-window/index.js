@@ -18,7 +18,7 @@ const PhoneWindow = () => {
     for (let i = 0; i < qArray.length; i++) 
     {
         let pArr = qArray[i].split('='); //split key and value
-        if (pArr[0] == paramName) 
+        if (pArr[0] === paramName) 
             return pArr[1]; //return value
     }
 }
