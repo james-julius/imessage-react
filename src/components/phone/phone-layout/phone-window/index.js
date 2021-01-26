@@ -24,7 +24,7 @@ const PhoneWindow = () => {
 }
 
   useEffect(() => {
-    const dataObj = getParamValue('dataObj')
+    const dataObj = JSON.parse(getParamValue('dataObj'))
     setName(dataObj.name);
     setMessages(dataObj.messaages);
     setSpotifyURI(dataObj.spotifyURI)
