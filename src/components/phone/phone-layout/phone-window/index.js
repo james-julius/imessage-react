@@ -6,8 +6,10 @@ import MessageHistory from "../../messages/message-history";
 
 const PhoneWindow = () => {
   // Get ready to assign this data
+  setName("yo yo");
   window.addEventListener('message', function(event) {
   if (event.origin !== window.parent.location.href) return;
+  setName('Event received')
     alert(event)
     // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
     if (typeof event.data === 'object' && event.data.call === 'sendValue') {
