@@ -37,7 +37,7 @@ const PhoneWindow = () => {
   <div
     className={styles['window']}
   >
-    <h1>{window.parentName}</h1>
+    <h1>{window.parent.querySelector("#testEl").innerHTML}</h1>
       <Header name={name} initials={initialiseName()}/>
       <MessageHistory messages={messages}/>
       <CollapsedInputFooter spotifyURI={spotifyURI}/>
