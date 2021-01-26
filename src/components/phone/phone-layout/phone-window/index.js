@@ -10,6 +10,7 @@ const PhoneWindow = () => {
   const [name, setName] = useState("R R");
   // Get ready to assign this data
   useEffect(() => {
+    setName("J J ")
     window.addEventListener(
       "message",
       function (event) {
