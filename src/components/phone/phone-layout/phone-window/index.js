@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+
 import styles from '../style.module.css'
 import Header from "../../header";
 import CollapsedInputFooter from "../../footer/collapsed-input-footer";
@@ -9,36 +10,29 @@ const PhoneWindow = () => {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState("R R");
   // Get ready to assign this data
+
+  function getParamValue(paramName)
+{
+    let url = window.location.search.substring(1); //get rid of "?" in querystring
+    let qArray = url.split('&'); //get key-value pairs
+    for (let i = 0; i < qArray.length; i++) 
+    {
+        let pArr = qArray[i].split('='); //split key and value
+        if (pArr[0] == paramName) 
+            return pArr[1]; //return value
+    }
+}
+
   useEffect(() => {
-    setName("J J ")
-    window.addEventListener(
-      "message",
-      function (event) {
-        console.log(window.parent.location.href);
-        if (
-          event.origin !== "https://aio-4bcab1.webflow.io/artist-react-linked"
-        )
-          return;
-        setName("Event received");
-        alert(event.data);
-        // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
-        if (typeof event.data === "object" && event.data.call === "sendValue") {
-          let data = event.data.value;
-          setSpotifyURI(data.spotifyURI);
-          setMessages(data.messages);
-          setName(data.name);
-        }
-      },
-      false
-    );
+    const dataObj = getParamValue('dataObj')
+    setName(dataObj.name);
+    setMessages(dataObj.messaages);
+    setSpotifyURI(dataObj.spotifyURI)
+
   }, []);
   
 
   
-  document.onload = function() {
-    window.parent.postMessage('message', () => 'readyForProps')
-  }
-
 
   function initialiseName() {
     let splitName = name.split(' ');
@@ -49,7 +43,7 @@ const PhoneWindow = () => {
   <div
     className={styles['window']}
   >
-      <Header name={name} initials={initialiseName()}/>
+      <Header name={name} initials={initialiseName(name)}/>
       <MessageHistory messages={messages}/>
       <CollapsedInputFooter spotifyURI={spotifyURI}/>
   </div>
