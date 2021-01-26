@@ -14,7 +14,10 @@ const PhoneWindow = () => {
       "message",
       function (event) {
         console.log(window.parent.location.href);
-        if (event.origin !== window.parent.location.href) return;
+        if (
+          event.origin !== "https://aio-4bcab1.webflow.io/artist-react-linked"
+        )
+          return;
         setName("Event received");
         alert(event);
         // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
@@ -27,7 +30,7 @@ const PhoneWindow = () => {
       },
       false
     );
-  }, [])
+  }, []);
   
 
   
