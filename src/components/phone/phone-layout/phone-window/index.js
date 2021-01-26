@@ -9,7 +9,6 @@ const PhoneWindow = () => {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState("R R");
   // Get ready to assign this data
-  setName("yo yo");
   window.addEventListener('message', function(event) {
     console.log(window.parent.location.href);
   if (event.origin !== window.parent.location.href) return;
