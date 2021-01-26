@@ -24,6 +24,7 @@ const PhoneWindow = () => {
 }
 
   useEffect(() => {
+    console.log(getParamValue('dataObj'))
     const dataObj = JSON.parse(getParamValue('dataObj'))
     setName(dataObj.name);
     setMessages(dataObj.messaages);
