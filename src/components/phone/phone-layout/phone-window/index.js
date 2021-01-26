@@ -5,9 +5,13 @@ import CollapsedInputFooter from "../../footer/collapsed-input-footer";
 import MessageHistory from "../../messages/message-history";
 
 const PhoneWindow = () => {
+  const [spotifyURI, setSpotifyURI] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [name, setName] = useState("R R");
   // Get ready to assign this data
   setName("yo yo");
   window.addEventListener('message', function(event) {
+    console.log(window.parent.location.href);
   if (event.origin !== window.parent.location.href) return;
   setName('Event received')
     alert(event)
@@ -25,9 +29,6 @@ const PhoneWindow = () => {
     window.parent.postMessage('message', () => 'readyForProps')
   }
 
-  const [spotifyURI, setSpotifyURI] = useState('');
-  const [messages, setMessages] = useState([]);
-  const [name, setName] = useState('R R');
 
   function initialiseName() {
     let splitName = name.split(' ');
