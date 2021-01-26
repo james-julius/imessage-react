@@ -21,7 +21,6 @@ const PhoneWindow = () => {
   
   document.onload = function() {
     window.parent.postMessage('message', () => 'readyForProps')
-    setName(window.parent.artistName);
   }
 
   const [spotifyURI, setSpotifyURI] = useState('');
@@ -37,7 +36,6 @@ const PhoneWindow = () => {
   <div
     className={styles['window']}
   >
-    <h1>{window.parent.querySelector("#testEl").innerHTML}</h1>
       <Header name={name} initials={initialiseName()}/>
       <MessageHistory messages={messages}/>
       <CollapsedInputFooter spotifyURI={spotifyURI}/>
