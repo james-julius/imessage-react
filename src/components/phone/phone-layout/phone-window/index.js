@@ -23,7 +23,7 @@ const PhoneWindow = () => {
 
   const [spotifyURI, setSpotifyURI] = useState('');
   const [messages, setMessages] = useState([]);
-  const [name, setName] = useState('');
+  const [name, setName] = useState('R R');
 
   // let spotifyURI = "https://open.spotify.com/track/3PFnF7lmHOxoYGXhxUkzCE?si=Kjoy_nseQ_2-OxGTRQvTag";
   // let messages = [
