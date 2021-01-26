@@ -20,7 +20,7 @@ const PhoneWindow = () => {
         )
           return;
         setName("Event received");
-        alert(event);
+        alert(event.data);
         // var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
         if (typeof event.data === "object" && event.data.call === "sendValue") {
           let data = event.data.value;
